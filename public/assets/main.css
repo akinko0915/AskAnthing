@@ -1,0 +1,134 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap);
+
+/* ===== BASIC BEGIN ===== */
+html,
+body {
+  background: linear-gradient(to right, #6DD5FA, #ffffff);
+  font-family: Roboto, 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #3280e7;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+/* ===== BASIC END ===== */
+
+/* ===== PAGE PARTS BEGIN ===== */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.page-title {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 25px;
+  color:rgb(28, 32, 240);
+}
+.page-divider {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto 20px auto;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+}
+/* ===== PAGE PARTS END ===== */
+
+/* ===== NOTIFICATION AREA BEGIN ===== */
+.action-success-area {
+  width: max-content;
+  margin: 10px auto;
+  padding: 5px 15px;
+  color: #388e3c;
+  border: solid 2px #388e3c;
+  border-radius: 4px;
+}
+.action-failed-area {
+  width: max-content;
+  margin: 10px auto;
+  padding: 5px 15px;
+  color: #bb1850;
+  border: solid 2px #bb1850;
+  border-radius: 4px;
+}
+/* ===== NOTIFICATION AREA END ===== */
+
+/* ===== NEW MESSAGE FORM AREA BEGIN ===== */
+.form-cover {
+  margin: 0 auto;
+  width: 90%;
+}
+.form-label{
+  color: white;
+  margin-bottom: 2rem;
+}
+.form-input-error {
+  color: #bb1850;
+  font-size: 0.875rem;
+  padding: 0 10px;
+}
+/* ===== NEW MESSAGE FORM AREA END ===== */
+
+/* ===== MESSAGE LIST AREA BEGIN ===== */
+.message-list-cover {
+  margin: 0 auto;
+  width: 90%;
+  color: white;
+}
+.message-item {
+  background-color: #6DD5FA;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  overflow-wrap: break-word;
+  border-radius: 4px;
+}
+.message-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
+}
+.message-title .spacer {
+  flex-grow: 1;
+}
+@media screen and (min-width: 500px) {
+  .message-title {
+    flex-direction: row;
+    align-items: end;
+  }
+}
+.message-line {
+  min-height: 1em;
+}
+
+.icon-trash{
+  color: #fff;
+}
+.icon-trash:hover:before{
+	color: red;
+}
+
+/*  Modal */
+.modal-title{
+  color: black;
+}
+.col-form-label{
+  color: black;
+}
+/* ===== MESSAGE LIST AREA END ===== */
+.comment-line {
+  min-height: 1em;
+}
