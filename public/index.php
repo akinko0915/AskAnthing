@@ -86,7 +86,7 @@ function convertTz($datetime_text)
 
     <div class="message-list-cover">
 	    <small>
-	   件の投稿
+      <?php echo $message_length; ?>件の投稿
 	    </small>
 
       <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -195,38 +195,21 @@ function convertTz($datetime_text)
 
     // ------------------------------------------------------------------------------
 
-    $('#commentList').on('click', function () {
+    $('#commentList').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
         var post_id = button.data('postidforcomment');
         console.log(post_id);
         $('#postIDForComment').val(post_id);
 
-        
-        const app = createApp({
-          data() {
-            return { 
-              commments: [],
-            }
-          },
-          methods:{
-            fetchComment: function(){
-              axios.post('/../src/get_comments.php', {
-                postRequest: post_id,
-              })
-              .then(function (response) {
-                app.comments = response.data;
-                console.log(response);
-              })
-              .catch(function (error) {
-                console.log(error);
-              });
-            }
-          },
-          created:function(){
-            this.fetchComment();
-          }
+
+        // Js file はpublicの下に置かないとnot foundになる
+        $.getScript("./assets/Comments.js", function(){
+          var post_id = $("#postIDForComment").val();
+          console.log(post_id)
+          getComments(post_id);
         })
       })
+
     });
   </script>
 </body>
